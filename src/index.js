@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Message from './js/Message'
+import APP from './js/App'
 
 import './css/style.css'
 
 ReactDOM.render(
-  <Message />,
-  document.getElementById('react-container') // eslint-disable-line no-undef
+  <APP />,
+  document.getElementById('react-root') // eslint-disable-line no-undef
 )
 
 if(module.hot) // eslint-disable-line no-undef  

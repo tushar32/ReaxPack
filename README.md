@@ -16,11 +16,12 @@ These are the main technologies we want to employ:
  <p><b>
  Webpack Dev Middleware (WDM) watches your source files and runs a Webpack build anytime you hit save on a file. All changes are handled in memory, so no files are writted to the disk. Hot Module Reloading is build on top of Webpack Dev Middleware.
     </b></p> 
+<p> For comparison, you might use something like express.static instead of this middleware in production. </p>
  <p><b>
     Basically, whenever you save a change to a file, Webpack Dev Middleware creates a new build, and HMR executes the change in the browser without you having to refresh the page manually
     </b></p>
- <p><b>html-loader and html-webpack-plugin to copy our index.html file to the dist directory. This plugin will also insert a script tag in the HTML file that imports the main Javascript file.</b></p>   
-
+ <p><b>html-loader and html-webpack-plugin to copy our index.html file to the dist directory. This plugin will also insert a script tag in the HTML file that imports the main Javascript file.</b></p>
+ 
 <h2>
 Installation </h2>
 

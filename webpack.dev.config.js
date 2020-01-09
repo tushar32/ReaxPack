@@ -57,6 +57,10 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/html/index.html",
       filename: "./index.html",
+      // !!! IMPORTANT !!!
+      favicon:"./src/img/favicon.ico",
+      	// !!! IMPORTANT !!!
+			hash: true, // add ?[build hash] to serving files to avoid caching
       excludeChunks: [ 'server' ]
     }),
     new webpack.HotModuleReplacementPlugin(),

@@ -6,18 +6,19 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 import config from '../webpack.dev.config.js'
 
 const app = express(),
-            DIST_DIR = __dirname,
-            HTML_FILE = path.join(DIST_DIR, 'index.html'),
             compiler = webpack(config)
 
 app.use(webpackDevMiddleware(compiler, {
-  publicPath: config.output.publicPath
+  publicPath: '/',
+  noInfo: true,
+  reload: 'true'
 }))
 
 app.use(webpackHotMiddleware(compiler))
 
 app.get('*', (req, res, next) => {
-  compiler.outputFileSystem.readFile(HTML_FILE, (err, result) => {
+ var filename = path.join(compiler.outputPath,'index.html');
+  compiler.outputFileSystem.readFile(filename, (err, result) => {
   if (err) {
     return next(err)
   }
